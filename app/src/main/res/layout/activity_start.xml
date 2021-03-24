@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/frameButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_home_height"
+        android:layout_margin="15dp"
+        android:background="@drawable/bg_create_photo_button"
+        android:drawableLeft="@drawable/ic_frame_white"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:text="@string/create_from_frame"
+        android:textColor="@android:color/white"/>
+</LinearLayout>
