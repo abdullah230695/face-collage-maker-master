@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
+<manifest xmlns:tools="http://schemas.android.com/tools"
     package="com.codetho.photocollage"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:versionCode="15"
@@ -8,7 +8,13 @@
     <uses-sdk
         android:minSdkVersion="15"
         android:targetSdkVersion="29"/>
-	<supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+
+	<supports-screens android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true"/>
+
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -22,20 +28,20 @@
         android:theme="@style/Theme.MyAppTheme">
         <meta-data android:name="android.max_aspect" android:value="2.1" />
         <!-- [START firebase_service] -->
-        <service
+   <!--     <service
             android:name="com.codetho.photocollage.fcm.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
-        <!-- [END firebase_service] -->
-        <!-- [START firebase_iid_service] -->
+        &lt;!&ndash; [END firebase_service] &ndash;&gt;
+        &lt;!&ndash; [START firebase_iid_service] &ndash;&gt;
         <service
             android:name="com.codetho.photocollage.fcm.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
-        </service>
+        </service>-->
         <!-- [END firebase_iid_service] -->
         <receiver
             android:name=".receiver.PackageInstallReceiver"
@@ -47,12 +53,13 @@
 
                 <data android:scheme="package" />
             </intent-filter>
-        </receiver>
+        </receiver>com.codetho.photocollage.ui.StartActivity
         <activity
             android:name="com.codetho.photocollage.ui.StartActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -64,35 +71,42 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:hardwareAccelerated="true"
             android:largeHeap="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".ui.AddTextItemActivity"
             android:label="@string/create_text_item"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".ui.DownloadedPackageActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".ui.TemplateDetailActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:largeHeap="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".ui.TemplateActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:largeHeap="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".ui.FrameDetailActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:largeHeap="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".ui.SelectPhotoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:largeHeap="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            tools:ignore="Instantiatable" />
     </application>
 
 </manifest>
